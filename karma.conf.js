@@ -1,52 +1,41 @@
-const path = require('path');
-const webpackConfig = require('./webpack.config');
-const ENV = process.env.npm_lifecycle_event;
-const isTestWatch = ENV === 'test-watch';
-
 module.exports = function (config) {
-  const _config = {
+  config.set({
     basePath: '',
-    frameworks: ['jasmine'],
-    files: [
-      { pattern: './karma-shim.js', watched: false }
+    frameworks: ['jasmine', '@angular/cli'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
+      require('@angular/cli/plugins/karma')
     ],
-    exclude: [],
+    client:{
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    files: [
+      { pattern: './src/test.ts', watched: false }
+    ],
     preprocessors: {
-      './karma-shim.js': ['webpack', 'sourcemap']
+      './src/test.ts': ['@angular/cli']
     },
-
-    webpack: webpackConfig,
-
-    webpackMiddleware: {
-      stats: 'errors-only'
+    mime: {
+      'text/x-typescript': ['ts','tsx']
     },
-
-    webpackServer: {
-      noInfo: true
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true
     },
-    reporters: ["mocha"],
+    angularCli: {
+      environment: 'dev'
+    },
+    reporters: config.angularCli && config.angularCli.codeCoverage
+              ? ['progress', 'coverage-istanbul']
+              : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: false,
+    autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: true
-  };
-
-  if (!isTestWatch) {
-    _config.reporters.push("coverage");
-
-    _config.coverageReporter = {
-      dir: 'coverage/',
-      reporters: [{
-        type: 'json',
-        dir: 'coverage',
-        subdir: 'json',
-        file: 'coverage-final.json'
-      }]
-    };
-  }
-
-  config.set(_config);
-
+    singleRun: false
+  });
 };
