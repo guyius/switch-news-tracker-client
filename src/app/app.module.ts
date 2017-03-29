@@ -4,17 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { HashtagsService } from './hashtags.service';
+import { HashtagsComponent } from './hashtags/hashtags.component';
+import { routing } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HashtagsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [HashtagsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
