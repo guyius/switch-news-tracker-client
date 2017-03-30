@@ -3,19 +3,19 @@ webpackJsonp([2,4],{
 /***/ 148:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(27)();
+exports = module.exports = __webpack_require__(48)();
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "body {\n  display: block;\n  background-color: #ffffff;\n  font-family: Arial, Helvetica, sans-serif; }\n\nswitch-news {\n  display: block; }\n\napp-hashtags .list {\n  list-style-type: none;\n  margin: 0 auto; }\n  app-hashtags .list .list-item {\n    padding: 5px 10px; }\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 183:
+/***/ 182:
 /***/ (function(module, exports) {
 
 /*
@@ -268,7 +268,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 187:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(87);
@@ -276,7 +276,7 @@ module.exports = __webpack_require__(87);
 
 /***/ }),
 
-/***/ 27:
+/***/ 48:
 /***/ (function(module, exports) {
 
 /*
@@ -342,14 +342,14 @@ module.exports = function() {
 var content = __webpack_require__(148);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(183)(content, {});
+var update = __webpack_require__(182)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../node_modules/postcss-loader/index.js!./styles.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../node_modules/postcss-loader/index.js!./styles.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../node_modules/postcss-loader/index.js!../../node_modules/sass-loader/index.js!./styles.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../node_modules/postcss-loader/index.js!../../node_modules/sass-loader/index.js!./styles.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -360,5 +360,5 @@ if(false) {
 
 /***/ })
 
-},[187]);
+},[186]);
 //# sourceMappingURL=styles.bundle.js.map

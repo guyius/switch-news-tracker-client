@@ -3,7 +3,7 @@ import { HashtagsService } from '../hashtags.service';
 @Component({
   selector: 'app-hashtags',
   templateUrl: './hashtags.component.html',
-  styleUrls: ['./hashtags.component.css']
+  styleUrls: ['./hashtags.component.scss']
 })
 export class HashtagsComponent implements OnInit {
   hashtags: any = [];

@@ -3,3 +3,6 @@ body {
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@import '../app/app.component.scss';
+@import '../app/hashtags/hashtags.component.scss';

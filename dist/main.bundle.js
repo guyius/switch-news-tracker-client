@@ -3,12 +3,12 @@ webpackJsonp([1,4],{
 /***/ 149:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(27)();
+exports = module.exports = __webpack_require__(48)();
 // imports
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "app-hashtags .list {\n  list-style-type: none;\n  margin: 0 auto; }\n  app-hashtags .list .list-item {\n    padding: 5px 10px; }\n", ""]);
 
 // exports
 
@@ -18,39 +18,21 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 150:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(27)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 152:
+/***/ 151:
 /***/ (function(module, exports) {
 
 module.exports = "<nav>\n  <a routerLink=\"/hashtags\" routerLinkActive=\"hashtags\">Hashtags</a>\n</nav>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
-/***/ 153:
+/***/ 152:
 /***/ (function(module, exports) {
 
-module.exports = "<p>hashtags works!</p>\n  <ul>\n    <li *ngFor=\"let hashtag of hashtags\">\n      <p>{{hashtag.hashtag}}</p>\n      <p>{{hashtag.counter}}</p>\n    </li>\n  </ul>\n"
+module.exports = "<p>hashtags works!</p>\n  <ul class=\"list\">\n    <li class=\"list-item\" *ngFor=\"let hashtag of hashtags\">\n      <p>{{hashtag.hashtag}}</p>\n      <p>{{hashtag.counter}}</p>\n    </li>\n  </ul>\n"
 
 /***/ }),
 
-/***/ 185:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(85);
@@ -64,7 +46,7 @@ module.exports = __webpack_require__(85);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HashtagsService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -133,8 +115,8 @@ var HashtagsComponent = (function () {
 HashtagsComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-hashtags',
-        template: __webpack_require__(153),
-        styles: [__webpack_require__(150)]
+        template: __webpack_require__(152),
+        styles: [__webpack_require__(149)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__hashtags_service__["a" /* HashtagsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__hashtags_service__["a" /* HashtagsService */]) === "function" && _a || Object])
 ], HashtagsComponent);
@@ -200,8 +182,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(152),
-        styles: [__webpack_require__(149)]
+        template: __webpack_require__(151),
+        styles: ['../styles/styles.scss']
     })
 ], AppComponent);
 
@@ -297,5 +279,5 @@ var environment = {
 
 /***/ })
 
-},[185]);
+},[184]);
 //# sourceMappingURL=main.bundle.js.map
